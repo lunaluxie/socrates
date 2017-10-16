@@ -12,6 +12,7 @@ Define a neural network with 2 input neurons, 1 hidden layer with 10 neurons, an
 
 ```Python
 from socrates.nn import *
+
 x = [0,0,1]
 y = [0]
 
