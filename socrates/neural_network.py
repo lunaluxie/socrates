@@ -8,11 +8,6 @@ from math import exp
 import random
 from pprint import pprint
 
-random.seed(42)
-
-x = [[0,0,1], [1,1,1], [1,0,1], [0,1,1]]
-y = [[0],[1],[1],[0]]
-
 def sigmoid(signal):
   return 1/(1+exp(-signal))
 
@@ -138,24 +133,21 @@ def network_back(network, target, loss=least_squares_loss):
       neuron = layer[j]
       neuron["delta"] = errors[j] * numerical_derivative(sigmoid, [neuron["out"]])
 
-#
-x_sample = x[0]
-y_sample = y[0]
 
+if __name__ == "__main__":
+  random.seed(42)
 
-net = create_network(3, 1, 1)
+  x = [0,0,1]
+  y = [0]
 
-forward_pass = network_forward(net, x_sample)
-print (forward_pass)
+  # define network
+  net = create_network(3, 1, 1)
 
-# backwards pass: 
-loss = least_squares_loss(forward_pass, y_sample)
-print (loss)
+  forward_pass = network_forward(net, x_sample)
 
-bp = network_back(net, y_sample)
+  # backwards pass using least squares loss
+  loss = least_squares_loss(forward_pass, y_sample)
+  back_prop = network_back(net, y_sample)
 
-for layer in net:
-  for neuron in layer:
-    pprint (neuron)
-
-#print (numerical_derivative(sigmoid, forward_pass))
+  # print the new weights
+  print (numerical_derivative(sigmoid, forward_pass))
