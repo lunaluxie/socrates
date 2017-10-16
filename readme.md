@@ -5,7 +5,7 @@
 ```
 $ git clone https://github.com/Kasperfred/socrates
 $ cd socrates
-$ pip install socrates
+$ pip install .
 ```
 ## Basic usage
 Define a neural network with 2 input neurons, 1 hidden layer with 10 neurons, and an output layer with 1 neuron, and run backpropagation once to find the new weights. Finally, we print these weights.
