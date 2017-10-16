@@ -134,7 +134,7 @@ def network_back(network, target, loss=least_squares_loss):
       neuron["delta"] = errors[j] * numerical_derivative(sigmoid, [neuron["out"]])
 
 
-if __name__ == "__main__":
+
   random.seed(42)
 
   x = [0,0,1]
