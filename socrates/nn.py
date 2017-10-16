@@ -132,22 +132,3 @@ def network_back(network, target, loss=least_squares_loss):
     for j in range(len(layer)):
       neuron = layer[j]
       neuron["delta"] = errors[j] * numerical_derivative(sigmoid, [neuron["out"]])
-
-
-
-  random.seed(42)
-
-  x = [0,0,1]
-  y = [0]
-
-  # define network
-  net = create_network(3, 1, 1)
-
-  forward_pass = network_forward(net, x_sample)
-
-  # backwards pass using least squares loss
-  loss = least_squares_loss(forward_pass, y_sample)
-  back_prop = network_back(net, y_sample)
-
-  # print the new weights
-  print (numerical_derivative(sigmoid, forward_pass))
