@@ -1,16 +1,24 @@
-class ProtoLoss:
-	def __init__(self):
-		pass
+import numpy as np
 
-	def __str__(self):
-		return "Abstract loss function"
+def least_squares_loss(pred,target):
+	"""Euclidian distance between a target value and predicted value
+	Args:
+		pred (array): matrix of predicted value
+		target (array): matrix of target prediction
+	Returns: 
+		float: ecludian error between pred and target
+	"""
 
-	def loss(self):
-		pass
+	# type checking
+  if type(pred) != type([]):
+    pred = [pred]
+  if type(target) != type([]):
+    target = [target]
 	
-	def loss_derivative(self):
-		pass 
+	# compute error
+  sub = 0
+  for p,t in zip(pred,target):
+    sub += t-p
+  error = (sub)**2
 
-pl = ProtoLoss()
-
-print (pl)
+	return error
