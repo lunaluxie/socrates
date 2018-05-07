@@ -28,7 +28,7 @@ class Expression():
 
 class Variable(Expression):
     def __init__(self, value):
-        Expr.__init__(self, value)
+        Expression.__init__(self, value)
 
     def grad(self):
         if self.grad_value is None:
@@ -38,7 +38,7 @@ class Variable(Expression):
 
 class Constant(Expression):
     def __init__(self, value):
-        Expr.__init__(self, value)
+        Expression.__init__(self, value)
         self.grad_value = 1
 
     def grad(self):
