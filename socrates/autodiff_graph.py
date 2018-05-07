@@ -8,7 +8,7 @@ Supports two modes
 """
 import numpy as np
 
-class Expr():
+class Expression():
     def __init__(self, value):
         self.value = value
         self.dependencies = []
@@ -26,7 +26,7 @@ class Expr():
         other.dependencies.append((self.value, z))
         return z
 
-class Variable(Expr):
+class Variable(Expression):
     def __init__(self, value):
         Expr.__init__(self, value)
 
@@ -36,7 +36,7 @@ class Variable(Expr):
                                   for weight, var in self.dependencies)
         return self.grad_value
 
-class Constant(Expr):
+class Constant(Expression):
     def __init__(self, value):
         Expr.__init__(self, value)
         self.grad_value = 1
