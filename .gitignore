@@ -1,4 +1,4 @@
-__pycache__
-*.egg
-*.egg-info
+venv
 .vscode
+.ropeproject
+.pytest_cache

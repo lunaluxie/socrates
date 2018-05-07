@@ -6,10 +6,10 @@ class Network:
 	def _self_check(self):
 		"""Check the integrity of the instance variables
 		"""
-		if not layers:
+		if not self.layers:
 			raise Exception("Selfcheck failed: No layers were found")
 		
-		if not loss:
+		if not self.loss:
 			raise Exception("Selfcheck failed: No loss function was found")
 
 	def add(self, layer):

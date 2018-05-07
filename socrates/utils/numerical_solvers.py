@@ -1,3 +1,5 @@
+import numpy as np
+
 def numerical_derivative(func, func_input, respect_to_index=0, h=0.0001):
   """Compute the numerical derivative of a function
   Args:
@@ -28,6 +30,9 @@ def numerical_derivative(func, func_input, respect_to_index=0, h=0.0001):
 def numerical_definite_integral(func, interval, n=5000):
 	"""Find the numerical value of of the definite integral 
 	with arbritrary precision using the rectangle method.
+
+  Basically Riemann summation
+
 	Args:
     func (function): A function with one integer like input argument
 		interval (list of float): length 2 denotes the start and stop value for the function.  
@@ -39,7 +44,7 @@ def numerical_definite_integral(func, interval, n=5000):
 	area = 0
 	# choose middle point in each sub-interval
 	cursor_loc = interval[0] + 0.5*delta_x
-	for rectangle in range(n):
+	for _ in range(n):
 		rect_height = func(cursor_loc)
 
 		# add the area
