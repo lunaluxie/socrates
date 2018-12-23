@@ -1,5 +1,9 @@
 # Socrates
-> Sane implementation of machine learning algorithms
+> Deep learning homebrew
+
+## What's included (currently)
+- autodiff engine
+- bunch of incomplete stubs
 
 ## Installation 
 ```
