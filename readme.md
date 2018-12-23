@@ -11,3 +11,7 @@ $ git clone https://github.com/Kasperfred/socrates
 $ cd socrates
 $ pip install .
 ```
+
+## FAQ
+### Will you continue to contribute to the repository?
+In theory, yes, however, given my track record, Schrodinger's cat has a better shot of surviving. 
