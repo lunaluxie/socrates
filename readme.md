@@ -14,4 +14,4 @@ $ pip install .
 
 ## FAQ
 ### Will you continue to contribute to the repository?
-In theory, yes, however, given my track record, Schrodinger's cat has a better shot of surviving. 
+In theory, yes, however, given my track record, Schrodinger's cat has a better shot at being alive than I do finishing this project.
